@@ -67,6 +67,12 @@ i {
             font-size: 28px;
         }
     }
+    .header-icons a:hover {
+        i {
+            color: $white-normal;
+            animation: none;
+        }
+    }
 
     .header-logo img {
         width: 140px;

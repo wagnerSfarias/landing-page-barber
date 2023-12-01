@@ -16,24 +16,22 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 80vh;
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
-    // background-position: 50% 0;
-    // background-position: center top;
+    background-position: 50% 0;
     opacity: 0.9;
 }
 
 .hero {
-    color: $white-normal;
-    min-height: 80vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 14px;
+    min-height: 80vh;
+    color: $white-normal;
 
     h1 {
         text-align: center;
@@ -68,6 +66,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .bg-home::before {
+        height: 400px;
+    }
+
     .hero {
         min-height: 60vh;
 
@@ -77,18 +80,22 @@
             width: 100%;
         }
     }
+    .button-contact:hover {
+        animation: none;
+    }
 }
 
 @media screen and (max-width: 480px) {
+    .bg-home::before {
+        height: 350px;
+    }
+
     .hero h1 {
         font-size: 24px;
     }
 
     .button-contact {
         padding: 10px 20px;
-        // color: $white-normal;
-        // background-color: $red-normal;
-        // border: 0;
         font-size: 16px;
         font-weight: 400;
         margin: 5% 0;
@@ -140,17 +147,17 @@
         }
 
         p {
-            line-height: 110%;
+            line-height: 120%;
         }
     }
 }
 
 .services {
-    background-color: $white-normal;
-    color: $black-normal;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: $black-normal;
+    background-color: $white-normal;
     align-items: center;
     padding: 54px 14px;
 }
@@ -165,13 +172,13 @@
 .haircuts {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     padding: 0 44px;
     width: 100%;
 }
 
 .haircut {
-    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: $white-normal;
@@ -261,14 +268,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 54px 0;
+    padding: 54px 0 30px;
     gap: 24px;
     color: $white-normal;
 }
 
 .footer-icons {
     display: flex;
-    gap: 8px;
+    gap: 14px;
+}
+
+.footer-icons a:hover {
+    i {
+        color: $red-light;
+        animation: translateY 0.8s infinite alternate;
+    }
 }
 
 .btn-whatsapp {
@@ -310,17 +324,34 @@
 @media screen and (max-width:768px) {
 
     .footer p {
-        width: 80%;
-        text-align: center;
+        width: 60%;
+        text-align:center;
+        font-size: 14px;
     }
 
     .footer-logo img {
         width: 140px;
     }
 
+    .footer-icons a:hover {
+        i {
+            color: $white-normal;
+            animation: none;
+        }
+    }
+
     .btn-whatsapp {
         img {
             max-width: 64px;
         }
+
+        img:hover {
+            transform: none;
+        }
+    }
+
+    .btn-whatsapp:hover .tooltip-text {
+        visibility: hidden;
+        opacity: 0;
     }
 }
